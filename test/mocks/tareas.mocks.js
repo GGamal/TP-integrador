@@ -3,6 +3,22 @@ const tarea = {
   prioridad_id: 1,
   completado: false
 }
+const tarea_mala = {
+  nombre: "sadd",
+  prioridad_id: 2,
+  completado: true,
+  das: 4
+}
+const tarea_buscarID = {
+  id:1,
+  titulo: "gamald",
+  prioridad_id: 1,
+  usuario_id: 1,
+  completado: false,
+  fecha_alta: null,
+  fecha_modificacion: null,
+  fecha_baja: null
+}
 
 const tareas = [
   {
@@ -48,4 +64,4 @@ const tareas = [
 
 ]
 
-module.exports = { tarea, tareas };
+module.exports = { tarea, tareas, tarea_buscarID, tarea_mala };

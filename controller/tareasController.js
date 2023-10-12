@@ -103,9 +103,9 @@ const actualizarTarea = async(req, res) =>{
         fecha_modificacion: new Date()
     })
     .then(() =>{res.status(200).json({mensaje: "se actualizo bien"})})
-    .catch(() =>{res.status(400).json({mensaje: "error"})})
+    .catch(() =>{res.status(404).json({mensaje: "error"})})
     if(!tarea){
-        return res.status(404).json("ese id no existe")
+        return res.status(404)
     }
     
 }

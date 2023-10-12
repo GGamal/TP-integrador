@@ -52,6 +52,7 @@ const ingresar = async (req, res) =>{
         secret
     )
     return res.status(200).json({mensaje : "se logueo bien", token})
+    // return res.status(200).json({mensaje : "se logueo bien", token})
     
 }
 
@@ -90,7 +91,7 @@ const eliminarUsuario = async(req, res) => {
 const listarUsuarios = async(req, res) =>{
     await knex.select("*").from("usuarios")
     .where("usuarios.fecha_baja", null)
-    .then(resultado => {res.status(200).json({usuarios: resultado})})
+    .then(resultado => {res.status(200).json({mensaje: "ok", usuarios: resultado})})
     .catch(error => {res.status(400).json({error : error})})
 }
 
