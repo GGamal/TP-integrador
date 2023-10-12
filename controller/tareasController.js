@@ -80,7 +80,7 @@ const listarID = async (req, res) =>{
     let id = req.params.id
     const usuario = await knex.select("*").from("tareas").where("tareas.usuario_id", "=", id)
     .then((resultado) => { 
-        if(resultado.fecha_baja !== null){
+        if(resultado.fecha_baja === null){
         return res.status(200).json({mensaje : "este usuario no tiene tareas"})
         }
         return res.status(200).json({mensaje: "las tareas del usuario son", tareas: resultado})
